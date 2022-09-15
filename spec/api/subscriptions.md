@@ -20,7 +20,7 @@ This API endpoint will be exposed to the frontend API to add a new source.
 Headers:
 
 ```http
-POST /api/add_source
+POST /api/subscriptions
 Content-Type: application/json
 Cookie: <auth_cookie>
 ```
@@ -30,12 +30,14 @@ Body parameters:
 ```json
 {
   "user_id": "string",
-  "source": "string"
+  "source_id": "string",
+  "section_id": "string"
 }
 ```
 
 - `user_id`: `String` (required) - The user id associated with the user who wants to add the new source. i.e. John
-- `source`: `String` (required) - The new source, or in other words, the domain name we want to add. i.e. nytimes.com
+- `source_id`: `String` (required) - The new source, or in other words, the domain name we want to add. i.e. nytimes.com
+- `section_id`: `String` (required) - The new section, or in other words, the path name we want to add. i.e. technology
 
 ### HTTP Response
 
@@ -48,10 +50,17 @@ The `data` field returns the following object:
 ```json
 {
   "data": {
-    "user_id": "string",
-    "source": "string"
+    "user_id": "string", 
+    "source_id": "string", 
+    "section_id": "string"
   },
-  "metadata": {},
+  "articles": [
+    {
+      "title": "string", 
+      "content": "string", 
+      "metadata": "json"
+    }
+  ],
   "errors": []
 }
 ```
@@ -97,7 +106,7 @@ This error occurs when the combination user-source already exists in the databas
 ```json
 {
   "code": "endpoint/duplicate_combination",
-  "data": { "user_id": "{user_id}", "source": "{source}" },
+  "data": { "user_id": "{user_id}", "source_id": "{source_id}", "section_id": "{section_id}" },
   "message": "Combination of user id and source already submitted to the database"
 }
 ```
