@@ -40,8 +40,14 @@ Query parameters:
   "data": {
     "user_id": "user123",
     "source_id": "source123",
-    "section_id": "section123",
-    "article_metadata": "{}"
+    "section_id": "section123", 
+    "articles": [
+      {
+        "title": "title", 
+        "content": "content", 
+        "metadata": {}
+      }
+    ]
   },
   "metadata": {},
   "errors": []

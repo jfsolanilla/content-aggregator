@@ -3,15 +3,15 @@
 
 ## Overview
 
-This spec describes the API endpoint for adding a source of websites for a given user. i.e. ESPN, CNN, TESLA
+This spec describes the API endpoint for subscribing a user to a particular source-section. i.e. ESPN, CNN, TESLA
 
 ### User story
 
-As a content aggregator user, I want to add a new source to my subscription list.
+As a content aggregator user, I want to subscribe a user to a source-section.
 
 ### UI usage
 
-This API endpoint will be exposed to the frontend API to add a new source.
+This API endpoint will be exposed to the frontend API to subscribe a user.
 
 ## Endpoint details
 
@@ -35,9 +35,9 @@ Body parameters:
 }
 ```
 
-- `user_id`: `String` (required) - The user id associated with the user who wants to add the new source. i.e. John
-- `source_id`: `String` (required) - The new source, or in other words, the domain name we want to add. i.e. nytimes.com
-- `section_id`: `String` (required) - The new section, or in other words, the path name we want to add. i.e. technology
+- `user_id`: `String` (required) - The user id associated with the user who wants to subscribe. i.e. John
+- `source_id`: `String` (required) - The new source, or in other words, the domain name we want to subscribe to. i.e. nytimes.com
+- `section_id`: `String` (required) - The new section, or in other words, the path name we want to subscribe to. i.e. technology
 
 ### HTTP Response
 
@@ -50,17 +50,11 @@ The `data` field returns the following object:
 ```json
 {
   "data": {
-    "user_id": "string", 
-    "source_id": "string", 
+    "user_id": "string",
+    "source_id": "string",
     "section_id": "string"
   },
-  "articles": [
-    {
-      "title": "string", 
-      "content": "string", 
-      "metadata": "json"
-    }
-  ],
+  "metadata": {},
   "errors": []
 }
 ```
