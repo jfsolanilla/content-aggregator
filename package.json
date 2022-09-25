@@ -1,0 +1,9 @@
+{
+  "name": "content-aggregator",
+  "version": "1.0.0",
+  "description": "content-aggregator",
+  "main": "index.js",
+  "repository": "https://github.com/jfsolanilla/content-aggregator.git",
+  "author": "Julian Franco <julianfrancosolanilla@gmail.com>",
+  "license": "MIT"
+}
