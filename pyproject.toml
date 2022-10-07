@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "content-aggregator"
+version = "0.1.0"
+description = "content-aggregator"
+authors = ["Julian Franco <julianfrancosolanilla@gmail.com>"]
+readme = "README.md"
+packages = [{include = "content_aggregator"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.85.0"
+SQLAlchemy = "^1.4.41"
+dotenv = "^0.0.5"
+uvicorn = "^0.18.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
